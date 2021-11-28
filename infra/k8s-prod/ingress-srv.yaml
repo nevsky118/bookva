@@ -4,6 +4,7 @@ metadata:
   name: ingress-service
   annotations:
     nginx.ingress.kubernetes.io/use-regex: 'true'
+    nginx.ingress.kubernetes.io/from-to-www-redirect: 'true'
 spec:
   ingressClassName: nginx
   rules:
@@ -52,6 +53,9 @@ metadata:
   annotations:
     service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: 'true'
     service.beta.kubernetes.io/do-loadbalancer-hostname: 'www.bookva.tech'
+    service.beta.kubernetes.io/do-loadbalancer-protocol: 'https'
+    service.beta.kubernetes.io/do-loadbalancer-certificate-id: '4e1627b561354229a6af83d9a8654a8342acd7fd'
+    service.beta.kubernetes.io/do-loadbalancer-disable-lets-encrypt-dns-records: 'false'
   labels:
     helm.sh/chart: ingress-nginx-2.0.3
     app.kubernetes.io/name: ingress-nginx
