@@ -1,0 +1,20 @@
+{
+	"login": "Войти",
+	"register": "Регистрация",
+	"logout": "Выйти",
+
+	"profile": "Профиль",
+	"settings": "Настройки",
+
+	"orders": "Заказы",
+	"favorites": "Избранное",
+	"cart": "Корзина",
+	"change_language": "Сменить язык",
+
+	"delete": "Удалить",
+
+	"add_to_cart": "Добавить в корзину",
+	"in_cart": "В корзине",
+
+	"breadcrumb_books": "Книги"
+}

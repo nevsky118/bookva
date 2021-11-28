@@ -1,0 +1,10 @@
+{
+	"title": "Вход | BOOKVA",
+	"header": "Авторизация",
+	"email": "E-mail",
+	"password": "Пароль",
+	"login": "Войти",
+	"register": "Зарегистрироваться",
+	"forgot_password": "Забыли пароль?",
+	"do_not_have_an_account": "Нет аккаунта?"
+}

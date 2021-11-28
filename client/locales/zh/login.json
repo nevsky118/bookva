@@ -1,0 +1,10 @@
+{
+	"title": "Login | BOOKVA",
+	"header": "Log in to your account",
+	"email": "E-mail",
+	"password": "Password",
+	"login": "Login",
+	"register": "Register",
+	"forgot_password": "Forgot password?",
+	"do_not_have_an_account": "Don't have an account?"
+}

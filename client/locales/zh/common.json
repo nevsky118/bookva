@@ -1,0 +1,20 @@
+{
+	"login": "Login",
+	"register": "Register",
+	"logout": "Logout",
+
+	"profile": "Profile",
+	"settings": "Settings",
+
+	"orders": "Orders",
+	"favorites": "Favorites",
+	"cart": "Cart",
+	"change_language": "Change language",
+
+	"delete": "Delete",
+
+	"add_to_cart": "Add to cart",
+	"in_cart": "In cart",
+
+	"breadcrumb_books": "Books"
+}
