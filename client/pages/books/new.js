@@ -32,7 +32,7 @@ const BooksNew = () => {
 		doRequest();
 	};
 
-	return (
+	const renderForm = (
 		<>
 			<div>
 				<Head>
@@ -166,6 +166,8 @@ const BooksNew = () => {
 			</div>
 		</>
 	);
+
+	return null;
 };
 
 export default BooksNew;
