@@ -15,13 +15,14 @@ const useRequest = ({ url, method, body, onSuccess }) => {
 
 			return response.data;
 		} catch (err) {
-			console.log();
 			setErrors(
-				<ul>
-					{err.response?.data.errors.map(err => (
-						<li key={err.message}>{err.message}</li>
-					))}
-				</ul>
+				err.response?.data.errors.map(err => (
+					<ul>
+						<li className="text-red-500 " key={err.message}>
+							{err.message}
+						</li>
+					</ul>
+				))
 			);
 		}
 	};

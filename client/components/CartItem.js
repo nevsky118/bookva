@@ -11,7 +11,7 @@ function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
 }
 
-const CartItem = ({ product, total, setTotal }) => {
+const CartItem = ({ product, total, setTotal, cartTotal, setCartTotal }) => {
 	let { t } = useTranslation();
 
 	const [qty, setQty] = useState(product.quantity);
@@ -40,6 +40,7 @@ const CartItem = ({ product, total, setTotal }) => {
 		onSuccess: () => {
 			setOpen(false);
 			setShowComponent(false);
+			setCartTotal(cartTotal - 1);
 		},
 	});
 

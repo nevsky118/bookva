@@ -13,7 +13,13 @@ function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
 }
 
-const BookOverview = ({ book, status, currentUser }) => {
+const BookOverview = ({
+	book,
+	status,
+	currentUser,
+	cartTotal,
+	setCartTotal,
+}) => {
 	let { t } = useTranslation();
 	const router = useRouter();
 
@@ -47,7 +53,10 @@ const BookOverview = ({ book, status, currentUser }) => {
 			id: book.id,
 			category: 'books',
 		},
-		onSuccess: () => setInCart(true),
+		onSuccess: () => {
+			setInCart(true);
+			setCartTotal(cartTotal + 1);
+		},
 	});
 
 	return (

@@ -1,9 +1,23 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
+import useRequest from '../hooks/use-request';
+import { useEffect } from 'react';
 
-const LandingPage = ({ books }) => {
+const LandingPage = ({ books, setCartTotal, currentUser }) => {
 	let { t } = useTranslation();
+
+	const { doRequest, errors } = useRequest({
+		url: '/api/cart?total=true',
+		method: 'get',
+		onSuccess: ({ products_total }) => setCartTotal(products_total),
+	});
+
+	useEffect(() => {
+		if (currentUser) {
+			doRequest();
+		}
+	}, []);
 
 	return (
 		<div>
@@ -59,8 +73,6 @@ const LandingPage = ({ books }) => {
 };
 
 LandingPage.getInitialProps = async (context, client, currentUser) => {
-	console.log(currentUser);
-
 	const { data } = await client.get('/api/books');
 	return { books: data };
 };

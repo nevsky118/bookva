@@ -6,9 +6,8 @@ import _ from 'lodash';
 import useRequest from '../../hooks/use-request';
 import { useState } from 'react';
 import CartItem from '../../components/CartItem';
-import { DuplicateIcon } from '@heroicons/react/outline';
 
-const Cart = ({ cart, amount_total }) => {
+const Cart = ({ cart, amount_total, cartTotal, setCartTotal }) => {
 	let { t } = useTranslation();
 	const router = useRouter();
 	const [total, setTotal] = useState(amount_total);
@@ -37,23 +36,26 @@ const Cart = ({ cart, amount_total }) => {
 				</p>
 
 				<div className="flex flex-wrap items-center justify-around max-w-4xl   mt-6 lg:w-full ">
-					<a
-						href="https://nextjs.org/docs"
-						className="p-6 mt-6  text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-					>
-						<h3 className="text-2xl font-bold">{t('cart:books')} &rarr;</h3>
-						<p className="mt-4 text-xl">{t('cart:books_suggestion')}</p>
-					</a>
-
-					<a
-						href="https://nextjs.org/learn"
-						className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-					>
-						<h3 className="text-2xl font-bold">
-							{t('cart:stationery')} &rarr;
-						</h3>
-						<p className="mt-4 text-xl">{t('cart:stationery_suggestion')}</p>
-					</a>
+					<Link href="/books">
+						<a
+							rel="noopener noreferrer"
+							className="p-6 mt-6  text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+						>
+							<h3 className="text-2xl font-bold">{t('cart:books')} &rarr;</h3>
+							<p className="mt-4 text-xl">{t('cart:books_suggestion')}</p>
+						</a>
+					</Link>
+					<Link href="/stationery">
+						<a
+							rel="noopener noreferrer"
+							className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+						>
+							<h3 className="text-2xl font-bold">
+								{t('cart:stationery')} &rarr;
+							</h3>
+							<p className="mt-4 text-xl">{t('cart:stationery_suggestion')}</p>
+						</a>
+					</Link>
 				</div>
 			</main>
 		</div>
@@ -82,6 +84,8 @@ const Cart = ({ cart, amount_total }) => {
 												product={product}
 												total={total}
 												setTotal={setTotal}
+												setCartTotal={setCartTotal}
+												cartTotal={cartTotal}
 											/>
 										))}
 									</ul>
@@ -122,20 +126,11 @@ const Cart = ({ cart, amount_total }) => {
 								</div>
 								{/*Test card details */}
 								<div
-									class="mt-4 px-4 py-3 leading-normal grid grid-cols-2 text-indigo-700 border border-indigo-500 rounded-lg"
+									className="mt-4 px-4 py-3 leading-normal grid grid-cols-2 text-indigo-700 border border-indigo-500 rounded-lg"
 									role="alert"
 								>
 									<p>{t('cart:test_card_details')}</p>
-									<div className="inline-flex">
-										<p>4242 4242 4242 4242</p>
-										<DuplicateIcon
-											onClick={() => {
-												navigator.clipboard.writeText('4242 4242 4242 4242');
-											}}
-											className="hidden lg:block h-6 w-6 ml-1 cursor-pointer"
-											aria-hidden="true"
-										/>
-									</div>
+									<p>4242 4242 4242 4242</p>
 									<p>{t('cart:date')}</p>
 									<p>{t('cart:date_descr')}</p>
 									<p>CVC:</p>

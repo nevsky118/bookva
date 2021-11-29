@@ -19,8 +19,8 @@ import {
 function classNames(...classes) {
 	return classes.filter(Boolean).join(' ');
 }
+
 const Header = ({ currentUser, prod_total, locale }) => {
-	const [cartItems, setCartItems] = useState(prod_total);
 	const [open, setOpen] = useState(false);
 	const [selectedLocale, setSelectedLocale] = useState(locale);
 
@@ -415,7 +415,7 @@ const Header = ({ currentUser, prod_total, locale }) => {
 												aria-hidden="true"
 											/>
 											<span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-												{cartItems}
+												{prod_total}
 											</span>
 										</a>
 									</Link>
