@@ -59,6 +59,8 @@ const LandingPage = ({ books }) => {
 };
 
 LandingPage.getInitialProps = async (context, client, currentUser) => {
+	console.log(currentUser);
+
 	const { data } = await client.get('/api/books');
 	return { books: data };
 };

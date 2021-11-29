@@ -25,7 +25,10 @@ spec:
             - name: NATS_CLUSTER_ID
               value: books
             - name: MONGO_URI
-              value: 'mongodb://checkout-mongo-srv:27017/checkout'
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-checkout
+                  key: MONGO_URI
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:

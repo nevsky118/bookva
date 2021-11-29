@@ -20,7 +20,9 @@ router.post(
 	],
 	validateRequest,
 	async (req: Request, res: Response) => {
-		const { name, price, author, description, currency, image } = req.body;
+		const { name, author, description, currency, image } = req.body;
+
+		const price = req.body.price * 100;
 
 		// Build the book and save it to the database
 		const book = Book.build({

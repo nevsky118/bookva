@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import { natsWrapper } from './nats-wrapper';
 import { app } from './app';
-import InitializeBooks from './config/books';
+
 const start = async () => {
 	if (!process.env.JWT_KEY) {
 		throw new Error('JWT_KEY must be defined');
@@ -33,8 +33,6 @@ const start = async () => {
 		process.on('SIGTERM', () => natsWrapper.client.close());
 
 		await mongoose.connect(process.env.MONGO_URI);
-		await InitializeBooks();
-		await InitializeBooks();
 	} catch (err) {
 		console.error(err);
 	}

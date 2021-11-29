@@ -25,7 +25,10 @@ spec:
             - name: NATS_CLUSTER_ID
               value: books
             - name: MONGO_URI
-              value: 'mongodb://cart-mongo-srv:27017/cart'
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-cart
+                  key: MONGO_URI
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
