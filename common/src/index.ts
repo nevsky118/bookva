@@ -20,6 +20,10 @@ export * from './events/book-updated-event';
 export * from './events/book-created-event';
 export * from './events/book-deleted-event';
 
+export * from './events/stationery-updated-event';
+export * from './events/stationery-created-event';
+export * from './events/stationery-deleted-event';
+
 export * from './events/cart-created-event';
 export * from './events/cart-deleted-event';
 export * from './events/cart-updated-event';

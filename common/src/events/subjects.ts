@@ -3,6 +3,10 @@ export enum Subjects {
 	BookUpdated = 'book:updated',
 	BookDeleted = 'book:deleted',
 
+	StationeryCreated = 'stationery:created',
+	StationeryUpdated = 'stationery:updated',
+	StationeryDeleted = 'stationery:deleted',
+
 	CartCreated = 'cart:created',
 	CartDeleted = 'cart:deleted',
 	CartUpdated = 'cart:updated',
