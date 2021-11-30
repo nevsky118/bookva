@@ -56,7 +56,11 @@ const Pagination = ({ page, totalPosts, paginate, currentPosts }) => {
 								}
 							}}
 							rel="noopener noreferrer"
-							className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+							className={
+								page === 1
+									? 'relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-200 bg-white text-sm font-medium text-gray-200'
+									: 'relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 cursor-pointer'
+							}
 						>
 							<span className="sr-only">{t('common:previous')}</span>
 							<ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
@@ -70,8 +74,8 @@ const Pagination = ({ page, totalPosts, paginate, currentPosts }) => {
 									aria-current="page"
 									className={
 										page === number
-											? `z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium`
-											: 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium'
+											? `z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer`
+											: 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium cursor-pointer'
 									}
 								>
 									{number}
@@ -85,7 +89,11 @@ const Pagination = ({ page, totalPosts, paginate, currentPosts }) => {
 									paginate(page + 1);
 								}
 							}}
-							className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+							className={
+								page === totalPosts
+									? 'relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-200 bg-white text-sm font-medium text-gray-200'
+									: 'relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 cursor-pointer'
+							}
 						>
 							<span className="sr-only">{t('common:next')}</span>
 							<ChevronRightIcon className="h-5 w-5" aria-hidden="true" />

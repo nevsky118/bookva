@@ -27,9 +27,14 @@ const LandingPage = ({ books, stationery, setCartTotal, currentUser }) => {
 
 			<main>
 				<div className="bg-white max-w-2xl mx-auto py-8 px-4  sm:px-6 lg:max-w-7xl lg:px-8">
-					<h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
-						{t('home:bookHeader')}
-					</h2>
+					<Link href="/books">
+						<a
+							rel="noopener noreferrer"
+							className="text-2xl font-extrabold tracking-tight text-gray-900 hover:underline"
+						>
+							{t('home:bookHeader')}
+						</a>
+					</Link>
 
 					<div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 						{books.slice(0, 4).map(product => (
@@ -45,7 +50,7 @@ const LandingPage = ({ books, stationery, setCartTotal, currentUser }) => {
 									<div>
 										<h3 className="text-sm text-gray-700">
 											<Link href={`/books/${product.id}`}>
-												<a>
+												<a rel="noopener noreferrer">
 													<span
 														aria-hidden="true"
 														className="absolute inset-0"
@@ -67,10 +72,14 @@ const LandingPage = ({ books, stationery, setCartTotal, currentUser }) => {
 						))}
 					</div>
 					<div className="mt-12">
-						<h2 className="text-2xl font-extrabold tracking-tight text-gray-900">
-							{t('home:stationeryHeader')}
-						</h2>
-
+						<Link href="/stationery">
+							<a
+								rel="noopener noreferrer"
+								className="text-2xl font-extrabold tracking-tight text-gray-900  hover:underline"
+							>
+								{t('home:stationeryHeader')}
+							</a>
+						</Link>
 						<div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 							{stationery.slice(0, 4).map(product => (
 								<div key={product.id} className="group relative">
