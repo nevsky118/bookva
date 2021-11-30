@@ -5,7 +5,6 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/use-regex: 'true'
     nginx.ingress.kubernetes.io/from-to-www-redirect: 'true'
-    nginx.ingress.kubernetes.io/force-ssl-redirect: 'true'
 spec:
   ingressClassName: nginx
   rules:
@@ -33,18 +32,18 @@ spec:
                 name: auth-srv
                 port:
                   number: 3000
-          - path: /api/books/?(.*)
-            pathType: Prefix
-            backend:
-              service:
-                name: books-srv
-                port:
-                  number: 3000
           - path: /api/stationery/?(.*)
             pathType: Prefix
             backend:
               service:
                 name: stationery-srv
+                port:
+                  number: 3000
+          - path: /api/books/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: books-srv
                 port:
                   number: 3000
           - path: /?(.*)
@@ -61,7 +60,6 @@ metadata:
   annotations:
     service.beta.kubernetes.io/do-loadbalancer-enable-proxy-protocol: 'true'
     service.beta.kubernetes.io/do-loadbalancer-hostname: 'www.bookva.tech'
-    service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: 'true'
   labels:
     helm.sh/chart: ingress-nginx-2.0.3
     app.kubernetes.io/name: ingress-nginx
