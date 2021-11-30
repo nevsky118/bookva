@@ -3,7 +3,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "next"
+		"dev": "next dev",
+		"build": "next build",
+		"start": "npm run build && next start"
 	},
 	"dependencies": {
 		"@headlessui/react": "^1.4.2",
