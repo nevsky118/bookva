@@ -31,6 +31,13 @@ spec:
                 name: auth-srv
                 port:
                   number: 3000
+          - path: /api/stationery/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: stationery-srv
+                port:
+                  number: 3000
           - path: /api/books/?(.*)
             pathType: Prefix
             backend:

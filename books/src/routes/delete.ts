@@ -27,4 +27,4 @@ router.delete(
 	}
 );
 
-export { router as deleteCartRouter };
+export { router as deleteBookRouter };

@@ -1,20 +1,9 @@
 {
-	"login": "Login",
-	"register": "Register",
-	"logout": "Logout",
+	"previous": "Previous",
+	"next": "Next",
 
-	"profile": "Profile",
-	"settings": "Settings",
-
-	"orders": "Orders",
-	"favorites": "Favorites",
-	"cart": "Cart",
-	"change_language": "Change language",
-
-	"delete": "Delete",
-
-	"add_to_cart": "Add to cart",
-	"in_cart": "In cart",
-
-	"breadcrumb_books": "Books"
+	"showing": "Showing",
+	"to": "to",
+	"of": "of",
+	"results": "results"
 }

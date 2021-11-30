@@ -12,7 +12,7 @@ interface CartAttrs {
 	itemId: string;
 }
 
-interface CartDoc extends mongoose.Document {
+export interface CartDoc extends mongoose.Document {
 	userId: string;
 	category: string;
 	name: string;

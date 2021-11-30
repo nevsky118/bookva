@@ -8,6 +8,7 @@ import { createBookRouter } from './routes/create';
 import { retrieveBookRouter } from './routes/retrieve';
 import { updateBookRouter } from './routes/update';
 import { indexBookRouter } from './routes/index';
+import { deleteBookRouter } from './routes/delete';
 
 const app = express();
 app.set('trust proxy', true);
@@ -22,6 +23,8 @@ app.use(
 app.use(currentUser);
 
 //app.use(createBookRouter);
+//app.use(deleteBookRouter);
+
 app.use(retrieveBookRouter);
 app.use(indexBookRouter);
 app.use(updateBookRouter);

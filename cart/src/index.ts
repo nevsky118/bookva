@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 import { natsWrapper } from './nats-wrapper';
 import { BookCreatedListener } from './events/listeners/book-created-listener';
 import { BookUpdatedListener } from './events/listeners/book-updated-listener';
+import { StationeryCreatedListener } from './events/listeners/stationery-created-listener';
+import { StationeryUpdatedListener } from './events/listeners/stationery-updated-listener';
 import { CheckoutSuccessListener } from './events/listeners/checkout-success-listener';
 import { app } from './app';
 
@@ -37,6 +39,8 @@ const start = async () => {
 
 		new BookCreatedListener(natsWrapper.client).listen();
 		new BookUpdatedListener(natsWrapper.client).listen();
+		new StationeryCreatedListener(natsWrapper.client).listen();
+		new StationeryUpdatedListener(natsWrapper.client).listen();
 		new CheckoutSuccessListener(natsWrapper.client).listen();
 
 		await mongoose.connect(process.env.MONGO_URI);

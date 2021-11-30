@@ -10,6 +10,8 @@ import { Book } from '../models/book';
 import { Cart } from '../models/cart';
 import { natsWrapper } from '../nats-wrapper';
 import { CartCreatedPublisher } from '../events/publishers/cart-created-publisher';
+import { Stationery, StationeryDoc } from '../models/stationery';
+import { BookDoc } from '../models/book';
 
 const router = express.Router();
 
@@ -28,10 +30,24 @@ router.post(
 	async (req: Request, res: Response) => {
 		const { id, category } = req.body;
 
-		// Find the book that the user is trying to add to the cart
-		const book = await Book.findById(id);
+		let item: BookDoc | StationeryDoc | null;
 
-		if (!book) {
+		switch (category) {
+			case 'books':
+				// Find the book that the user is trying to add to the cart
+				item = await Book.findById(id);
+
+				break;
+			case 'stationery':
+				// Find the stationery item that the user is trying to add to the cart
+				item = await Stationery.findById(id);
+				break;
+			default:
+				res.send('Category must be provided');
+		}
+
+		//@ts-ignore
+		if (!item) {
 			throw new NotFoundError();
 		}
 
@@ -39,12 +55,12 @@ router.post(
 		const cart = Cart.build({
 			userId: req.currentUser!.id,
 			category: category,
-			name: book.name,
-			description: book.description,
-			price: book.price,
-			currency: book.currency,
-			image: book.image,
-			itemId: book.id,
+			name: item.name,
+			description: item.description,
+			price: item.price,
+			currency: item.currency,
+			image: item.image,
+			itemId: item.id,
 		});
 		await cart.save();
 

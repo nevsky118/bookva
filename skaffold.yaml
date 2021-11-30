@@ -4,6 +4,7 @@ deploy:
   kubectl:
     manifests:
       - ./infra/k8s/*
+      - ./infra/k8s-dev/*
 build:
   local:
     push: false
@@ -42,6 +43,14 @@ build:
             dest: .
     - image: kringel/cart
       context: cart
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: kringel/stationery
+      context: stationery
       docker:
         dockerfile: Dockerfile
       sync:

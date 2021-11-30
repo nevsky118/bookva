@@ -36,7 +36,7 @@ const Header = ({ currentUser, prod_total, locale }) => {
 	const navigation = {
 		pages: [
 			{ name: `${t('header:books')}`, href: '/books' },
-			{ name: `${t('header:stationery')}`, href: '#' },
+			{ name: `${t('header:stationery')}`, href: '/stationery' },
 		],
 	};
 

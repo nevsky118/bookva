@@ -8,6 +8,8 @@
 		"/auth/register": ["register"],
 		"/books": ["books"],
 		"/books/[bookId]": ["bookid"],
+		"/stationery": ["stationery"],
+		"/stationery/[stationeryId]": ["stationeryid"],
 		"/cart": ["cart"],
 		"/orders": ["orders"],
 		"/checkout/success": ["success"],
