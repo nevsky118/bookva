@@ -1,9 +1,9 @@
 {
-	"previous": "Previous",
-	"next": "Next",
+	"previous": "上一页",
+	"next": "下一页",
 
-	"showing": "Showing",
-	"to": "to",
-	"of": "of",
-	"results": "results"
+	"showing": "展示",
+	"to": "到",
+	"of": "来自",
+	"results": "页"
 }
