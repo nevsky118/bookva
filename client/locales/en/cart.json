@@ -1,8 +1,8 @@
 {
 	"title": "Cart — BOOKVA",
-	"shopping_cart": "Shopping cart is",
+	"shopping_cart": "Shopping cart",
 
-	"empty": "empty",
+	"empty": "is empty",
 	"suggestion": "Browse products on the",
 	"main_page": "main page",
 	"use_catalog_search": ", use the catalog or search",
