@@ -39,7 +39,7 @@ const Cart = ({ cart, amount_total, cartTotal, setCartTotal }) => {
 					<Link href="/books">
 						<a
 							rel="noopener noreferrer"
-							className="p-6 mt-6  text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+							className="h-36 p-6 mt-6  text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
 						>
 							<h3 className="text-2xl font-bold">{t('cart:books')} &rarr;</h3>
 							<p className="mt-4 text-xl">{t('cart:books_suggestion')}</p>
@@ -48,9 +48,9 @@ const Cart = ({ cart, amount_total, cartTotal, setCartTotal }) => {
 					<Link href="/stationery">
 						<a
 							rel="noopener noreferrer"
-							className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+							className="h-36 p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
 						>
-							<h3 className="text-2xl font-bold">
+							<h3 className=" text-2xl font-bold">
 								{t('cart:stationery')} &rarr;
 							</h3>
 							<p className="mt-4 text-xl">{t('cart:stationery_suggestion')}</p>
