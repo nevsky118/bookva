@@ -1,15 +1,10 @@
+import useTranslation from 'next-translate/useTranslation';
+
 const Footer = () => {
+	let { t } = useTranslation();
 	return (
 		<footer className="flex items-center justify-center w-full h-24 border-t">
-			<a
-				className="flex items-center justify-center"
-				href="#"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Powered by{' '}
-				<img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-			</a>
+			<a className="text-gray-500 ">© 2021, Bookva. {t('common:footer')}</a>
 		</footer>
 	);
 };

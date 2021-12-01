@@ -302,8 +302,8 @@ const Header = ({ currentUser, prod_total, locale }) => {
 										<span className="sr-only">Workflow</span>
 										<img
 											className="h-8 w-auto"
-											src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
-											alt=""
+											src="/owl.png"
+											alt="Owl Icon in Line Style By Jemis Mali"
 										/>
 									</a>
 								</Link>
