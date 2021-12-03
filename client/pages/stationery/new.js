@@ -167,7 +167,7 @@ const StationeryNew = () => {
 		</>
 	);
 
-	return null;
+	return renderForm;
 };
 
 export default StationeryNew;
