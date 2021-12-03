@@ -51,8 +51,6 @@ router.post(
 			line_items,
 			success_url: `${req.headers.origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
 			cancel_url: `${req.headers.origin}/checkout/cancel?session_id={CHECKOUT_SESSION_ID}`,
-			// success_url: `http://book.dev/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-			// cancel_url: `http://book.dev/checkout/cancel?session_id={CHECKOUT_SESSION_ID}`,
 		};
 
 		try {
