@@ -195,7 +195,6 @@ const Login = () => {
 								</p>
 							</div>
 						</div>
-						{errors}
 					</form>
 				</div>
 			</div>
