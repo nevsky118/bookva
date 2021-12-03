@@ -23,7 +23,7 @@ app.use(currentUser);
 app.use(indexStationeryRouter);
 app.use(updateStationeryRouter);
 app.use(retrieveStationeryRouter);
-app.use(createStationeryRouter);
+//app.use(createStationeryRouter);
 
 app.all('*', async (req, res) => {
 	throw new NotFoundError();
