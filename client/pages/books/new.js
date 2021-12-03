@@ -167,7 +167,7 @@ const BooksNew = () => {
 		</>
 	);
 
-	return renderForm;
+	return null;
 };
 
 export default BooksNew;
