@@ -7,6 +7,7 @@ import { errorHandler, NotFoundError, currentUser } from '@kringel118/common';
 import { indexStationeryRouter } from './routes/index';
 import { updateStationeryRouter } from './routes/update';
 import { retrieveStationeryRouter } from './routes/retrieve';
+import { createStationeryRouter } from './routes/create';
 
 const app = express();
 app.set('trust proxy', true);
@@ -22,6 +23,7 @@ app.use(currentUser);
 app.use(indexStationeryRouter);
 app.use(updateStationeryRouter);
 app.use(retrieveStationeryRouter);
+app.use(createStationeryRouter);
 
 app.all('*', async (req, res) => {
 	throw new NotFoundError();
