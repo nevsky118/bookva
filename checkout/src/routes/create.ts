@@ -47,10 +47,7 @@ router.post(
 			submit_type: 'pay',
 			mode: 'payment',
 			payment_method_types: ['card'],
-			billing_address_collection: 'auto',
-			shipping_address_collection: {
-				allowed_countries: ['US', 'CA'],
-			},
+			allow_promotion_codes: true,
 			line_items,
 			success_url: `${req.headers.origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
 			cancel_url: `${req.headers.origin}/checkout/cancel?session_id={CHECKOUT_SESSION_ID}`,
