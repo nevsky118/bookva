@@ -1,5 +1,7 @@
 ## Overview
-Building online bookstore using Microservices built with Node, React, Docker and Kubernetes.
+Building online bookstore using Microservices built with Node, React, Docker and Kubernetes. 
+
+Implementing third party payment service such as Stripe.
 
 
 
